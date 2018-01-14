@@ -1,0 +1,14 @@
+<% include ./partials/header.ejs %>
+
+<h2>Enter new item:</h2>
+<form action="/" method="POST">
+    <label>Item:</label>
+    <input type="text" name="item" placeholder="item">
+
+    <label>Price:</label>
+    <input type="number" name="price" placeholder="price">
+
+    <button>Submit</button>
+</form>
+
+<% include ./partials/footer.ejs %>

@@ -1,0 +1,16 @@
+<% include ./partials/header.ejs %>
+
+<h1>Shopping list:</h1>
+<a href="/new">Want to add an item?</a>
+   <% itemFound.forEach(function(item){ %>
+        <li><%= item.item %></li>
+        <p>Created: <%= item.created.toDateString() %></p>
+        <!-- form action needs to be equal to first parameter
+             in router: EX: router.delete("/:id", items.deletePost); -->
+        <form action="/<%= item.id %>?_method=DELETE" method="POST">
+            <input type="submit" class="btn btn-xs btn-danger" value="Delete">
+        </form>
+        <a href="/<%= item.id %>/edit">Edit <%= item.item %></a>
+    <% }) %>
+
+<% include ./partials/footer.ejs %>
