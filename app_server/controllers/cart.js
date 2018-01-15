@@ -7,13 +7,20 @@ var Item        = require("../models/cartItem");
 
 //SHOW CART LIST
 module.exports.list = function(req, res){
+   
     Item.find({}, function(err, itemFound){
         if(err){
             res.redirect("/");
         }
         else{
-            //console.log(itemFound);
-            res.render("home", {itemFound: itemFound});
+            Item.count({}, function(err, counter){
+                if(err){
+                    res.redirect("/");
+                }
+                else{
+                    res.render("home", {itemFound: itemFound, counter: counter});
+                }
+            })
         }
     });
 }

@@ -1,7 +1,9 @@
 <% include ./partials/header.ejs %>
-<div class="container" id="textColor">
-    <h1>Shopping list:</h1>
+<div class="container total" id="textColor">
+    <h1>Shopping Cart:</h1>
     <a class="btn btn-info" href="/new">Want to add an item?</a>
+    <h2>You currently have <span class="cash"><%= counter %></span> items in your cart</h2>
+    <% var total = 0 %>
 
     <div>
         <table id="textColor" class="table">
@@ -14,9 +16,11 @@
                     <th></th>
                  </tr>
             </thead>
-                <tbody>
+                
                 <% itemFound.forEach(function(item){ %>
+                    <% total += item.price %>
                     <% var cartItem = item.item.charAt(0).toUpperCase() + item.item.slice(1) %>
+                    <tbody>
                     <tr>
                         <td>
                             <li><%= cartItem %></li>
@@ -31,17 +35,19 @@
                                 in router: EX: router.delete("/:id", items.deletePost); -->
                         <td>
                             <form action="/<%= item.id %>?_method=DELETE" method="POST">
-                                <input type="submit" class="btn btn-xs btn-danger" value="Delete">
+                                <input id="dlt" type="submit" class="btn btn-xs btn-danger" value="Delete">
                             </form>
                         
-                            <a id="textColor" href="/<%= item.id %>/edit">Edit <%= item.item %></a>
+                            <a id="textColor" href="/<%= item.id %>/edit"><u>Click here to edit <%= cartItem %></u></a>
                         </td>
                     </tr>
-                <% }) %>  
                 </tbody>
+                <% }) %>  
+                
         </table>
     </div>
-    
+
+    <h3 class="total">Your total is currently <span class="cash">$<%= total %></span></h3>
     
 </div>
 
