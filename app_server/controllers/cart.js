@@ -62,6 +62,17 @@ module.exports.getEdit = function(req, res){
     })
 }
 
-// module.exports.editPost = function(req, res){
-//     Item.findByIdAndUpdate()
-// }
+module.exports.editPost = function(req, res){
+    cart = {};
+    cart.item = req.body.item;
+    cart.price = req.body.price;
+    console.log(req.params.id);
+    Item.findByIdAndUpdate(req.params.id, cart, function(err, updatedCart){
+        if(err){
+            res.redirect("/");
+        }
+        else{
+            res.redirect("/");
+        }
+    })
+}

@@ -1,14 +1,14 @@
 <% include ./partials/header.ejs %>
+<div class="container">
+    <h2 id="textColor">Enter new item:</h2>
+    <form action="/" method="POST">
+        <label id="textColor">Item:</label>
+        <input type="text" name="item" placeholder="item">
 
-<h2>Enter new item:</h2>
-<form action="/" method="POST">
-    <label>Item:</label>
-    <input type="text" name="item" placeholder="item">
+        <label id="textColor">Price:</label>
+        <input type="number" name="price" placeholder="price">
 
-    <label>Price:</label>
-    <input type="number" name="price" placeholder="price">
-
-    <button>Submit</button>
-</form>
-
+        <button>Submit</button>
+    </form>
+</div>
 <% include ./partials/footer.ejs %>
