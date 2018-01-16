@@ -17,6 +17,21 @@ body{
     font-family: cursive, 'Arial Narrow', Arial, sans-serif;
 }
 
+.bkground{
+    background: rgba(23, 45, 245, 0.5);
+    border-radius: 10px;
+}
+
+#basic-addon1{
+    background: #7084f5;
+    font-size: 15px;
+    color: white;
+}
+
+.moveText{
+    margin-top: 7%;
+}
+
 #custom-bootstrap-menu.navbar-default .navbar-brand {
     color: rgba(255, 255, 255, 1);
 }

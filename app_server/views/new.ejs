@@ -1,14 +1,20 @@
 <% include ./partials/header.ejs %>
 <div class="container">
     <h2 id="textColor">Enter new item:</h2>
-    <form action="/" method="POST">
-        <label id="textColor">Item:</label><br>
-        <input type="text" name="item" placeholder="item">
-        <br>
-        <label id="textColor">Price:</label><br>
-        <input type="number" name="price" placeholder="price">
-        <br><br>
-        <button class="btn">Submit</button>
-    </form>
+    <div>
+        <form action="/" method="POST">
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">Item</span>
+                <input class="form-control" type="text" name="item">
+            </div>
+            <br>
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">Price</span>
+                <input class="form-control" type="number" name="price">
+            </div>
+            <br>
+            <button class="btn btn-info">Submit</button>
+        </form>
+    </div>
 </div>
 <% include ./partials/footer.ejs %>

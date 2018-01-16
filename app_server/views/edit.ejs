@@ -1,16 +1,20 @@
 <% include ./partials/header.ejs %>
-
 <div class="container">
     <h1 id="textColor">Edit <%= foundItem.item %> </h1>
-
-    <form action="/<%= foundItem.id %>?_method=PUT" method="POST">
-        <label id="textColor">Item:</label>
-        <input type="text" name="item" value="<%= foundItem.item %>">
-
-        <label id="textColor">Price:</label>
-        <input type="number" name="price" value="<%= foundItem.price %>">
-
-        <button>Submit</button>
-    </form>
+    <div>
+        <form action="/<%= foundItem.id %>?_method=PUT" method="POST">
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">Item</span>
+                <input class="form-control" type="text" name="item" value="<%= foundItem.item %>"><br>
+            </div>
+            <br>
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">Price</span>
+                <input class="form-control" type="number" name="price" value="<%= foundItem.price %>">
+            </div>
+            <br>
+            <button class="btn btn-info">Submit</button>
+        </form>
+    </div>
 </div>
 <% include ./partials/footer.ejs %>
